@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parkline Group</title>
+  <meta name="description" content="Parkline Group is a private, Delhi-based residential property advisory handling select owner-driven mandates." />
+
+  <!-- Fonts: Old‑money serif + restrained sans -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f2f2f1;
+      --paper: #ffffff;
+      --ink: #1b1b1b;
+      --muted: #7a7a7a;
+      --rule: #d6d6d6;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.8;
+    }
+
+    /* HERO SLIDER */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    .slides {
+      position: absolute;
+      inset: 0;
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 1.2s ease;
+    }
+
+    .slide.active {
+      opacity: 1;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(70%);
+    }
+
+    .hero-overlay {
+      position: relative;
+      z-index: 2;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: rgba(242,242,241,0.75);
+      backdrop-filter: blur(2px);
+    }
+
+    .hero-inner {
+      max-width: 820px;
+      padding: 24px;
+    }
+
+    .brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 64px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      margin: 0;
+    }
+
+    .rule {
+      width: 90px;
+      height: 1px;
+      background: var(--rule);
+      margin: 36px auto;
+    }
+
+    .tagline {
+      font-size: 13px;
+      letter-spacing: 2px;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    /* SECTIONS */
+    section {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 130px 24px;
+    }
+
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 36px;
+      font-weight: 500;
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    p {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 15px;
+      color: #2a2a2a;
+      text-align: center;
+    }
+
+    /* DETAIL BLOCKS */
+    .details {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 40px;
+      margin-top: 80px;
+    }
+
+    .detail {
+      background: var(--paper);
+      border: 1px solid var(--rule);
+      padding: 44px 34px;
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .detail strong {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* CONTACT */
+    .contact {
+      background: var(--paper);
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .contact p {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    footer {
+      text-align: center;
+      padding: 56px 20px;
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 2px;
+    }
+
+    @media (max-width: 768px) {
+      .brand { font-size: 46px; }
+      section { padding: 100px 20px; }
+    }
+  </style>
+
+  <script>
+    console.log('Parkline Group: slider script loaded');
+
+    document.addEventListener('DOMContentLoaded', function () {
+      console.log('DOM ready');
+
+      const slides = document.querySelectorAll('.slide');
+      console.log('Slides found:', slides.length);
+
+      let current = 0;
+      slides[current].classList.add('active');
+
+      setInterval(() => {
+        slides[current].classList.remove('active');
+        current = (current + 1) % slides.length;
+        slides[current].classList.add('active');
+        console.log('Slide changed to index:', current);
+      }, 4500);
+    });
+
+    window.addEventListener('load', function () {
+      console.log('Window fully loaded');
+    });
+  </script>
+</head>
+<body>
+
+  <!-- HERO SLIDER -->
+  <div class="hero">
+    <div class="slides">
+      <div class="slide"><img src="https://images.unsplash.com/photo-1505843513577-22bb7d21e455" alt="Delhi residential street" /></div>
+      <div class="slide"><img src="https://images.unsplash.com/photo-1523217582562-09d0def993a6" alt="Private bungalow setting" /></div>
+      <div class="slide"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Quiet residential property" /></div>
+      <div class="slide"><img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994" alt="Independent residence" /></div>
+      <div class="slide"><img src="https://images.unsplash.com/photo-1501183638710-841dd1904471" alt="Lush residential environment" /></div>
+      <div class="slide"><img src="https://images.unsplash.com/photo-1494526585095-c41746248156" alt="Tree-lined residential avenue" /></div>
+      <div class="slide"><img src="https://images.unsplash.com/photo-1599423300746-b62533397364" alt="Private villa exterior" /></div>
+      <div class="slide"><img src="https://images.unsplash.com/photo-1475856034135-6c5c6a82f5b9" alt="Calm urban residential setting" /></div>
+    </div>
+
+    <div class="hero-overlay">
+      <div class="hero-inner">
+        <h1 class="brand">Parkline</h1>
+        <div class="rule"></div>
+        <div class="tagline">Delhi · Residential Property Advisory</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section>
+    <h2>About</h2>
+    <p>
+      Parkline Group is a Delhi-based residential property advisory operating on a private, reference-led basis. 
+      We work with a limited number of owners and buyers, prioritising discretion, pricing realism, and long-term suitability over transaction volume.
+    </p>
+  </section>
+
+  <!-- DETAIL / DEPTH -->
+  <section>
+    <h2>Our Practice</h2>
+    <div class="details">
+      <div class="detail">
+        <strong>Market Focus</strong>
+        South and Central Delhi residential plots, independent houses, and low-density developments where privacy and long-term value matter more than yield optics.
+      </div>
+      <div class="detail">
+        <strong>Mandate Style</strong>
+        Direct owner representations only. Properties are reviewed for title clarity, pricing realism, and intent before being introduced to prospective buyers.
+      </div>
+      <div class="detail">
+        <strong>Clientele</strong>
+        End-users and long-term investors seeking personal residences or generational holdings, typically via reference rather than open-market circulation.
+      </div>
+      <div class="detail">
+        <strong>Approach</strong>
+        Fewer listings, quieter processes, and measured decision-making. We coordinate closely with legal and professional advisors to ensure clean execution.
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact">
+    <h2>Contact</h2>
+    <p>
+      contact@parkline.co<br />
+      +91‑XXXXXXXXXX
+    </p>
+  </section>
+
+  <footer>
+    PRIVATE ADVISORY · BY REFERENCE
+  </footer>
+
+</body>
+</html>
